@@ -1,7 +1,7 @@
 // Express
 const express = require("express");
 const app = express();
-const controller = require('./controller/user-controller.js');
+const controller = require('./user-controller/user-controller.js');
 
 // Configuration
 const port = 8000;

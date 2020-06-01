@@ -1,1 +1,1 @@
-This is mock data.
+This is data from the NOOPS Wordbot API

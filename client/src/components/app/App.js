@@ -1,7 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 
-export default class App extends React.Component {
-    render() {
-        return <h1>Hello world!</h1>
-    }
+
+export default function App() {
+
+    const [content, setContent] = useState('');
+
+    useEffect(() => {
+        const data = async() => {
+            let result = await axios.get('http://localhost:8001/test').then(response => {
+                console.log("real-time change");
+                return response.data;
+            });
+            setContent(result);
+        }
+
+        data();
+    }, []);
+
+    return (<h1>{content}</h1>);
 }

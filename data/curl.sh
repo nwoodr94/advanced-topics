@@ -5,14 +5,16 @@ i=0
 ARRAY=()
 
 ARRAY+=[
-while [ $i -lt 5 ]
+while [ $i -lt 100 ]
 do
   echo "Number: $i"
   CALL=$(curl -H "Content-Type: application/json" "$API" | jq '.words')
   ARRAY+=$CALL
-  if [[ "$i" -lt 4 ]]; then
+  if [[ "$i" -lt 99 ]]; then
     ARRAY+=,
   fi
+
+  sleep 1
 
   ((i++))
 done

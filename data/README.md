@@ -1,0 +1,1 @@
+This bash script essentially performs an etl routine by calling an API several times to incrementally build a json db containing words in the English language.

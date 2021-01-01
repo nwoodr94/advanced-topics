@@ -1,12 +1,11 @@
 // Express
 const express = require("express");
 const app = express();
-const controller = require('./user-controller/user-controller.js');
 const path = require('path');
 
 // Configuration
 const port = 8001;
-const host = 'localhost';
+const host = '0.0.0.0';
 
 // Middleware
 const cors = require('cors');
@@ -19,7 +18,7 @@ app.use(cors(corsOptions));
 app.use(express.static('/home/nwoodr94/code/real-time/client/build/'))
 
 app.get('/test', (req, res) => {
-    res.send("ok");
+    res.send("hot reload in docker-compose");
   })
 
 // Server

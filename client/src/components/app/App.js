@@ -9,7 +9,6 @@ export default function App() {
     useEffect(() => {
         const data = async() => {
             let result = await axios.get('http://localhost:8001/test').then(response => {
-                console.log("real-time change");
                 return response.data;
             });
             setContent(result);
